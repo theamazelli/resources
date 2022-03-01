@@ -1,4 +1,4 @@
-kind : Namespace
-apiVersion : v1
-metadata :
-  name : lhind-bootcamp
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: lhind-bootcamp
