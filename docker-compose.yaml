@@ -1,0 +1,46 @@
+version: "3.9"
+services:
+  backend:
+    image: backendimage15
+    container_name: quiz-backend
+    build:
+      context: ./quiz-backend
+      dockerfile: Dockerfile
+    environment:
+      - MANAGEMENT_SECURITY_ENABLED=false
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+      - frontend
+  frontend:
+    image:frontend
+    container_name: quiz-frontend
+    build:
+      context: ./quiz-frontend/quiz-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8094:80"
+    depends_on:
+      - backend
+    links:
+      - backend
+    networks:
+      - frontend
+networks:
+  frontend:
+  backend:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
